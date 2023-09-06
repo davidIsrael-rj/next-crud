@@ -1,10 +1,19 @@
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import Layout from '../components/Layout'
+import Tabela from '../components/Tabela'
+import Cliente from '../core/Cliente'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
+
+  const clientes = [
+    new Cliente('Ana', 34, '1'),
+    new Cliente('Bia', 45, '2'),
+    new Cliente('Carla', 25, '3'),
+    new Cliente('Pedro', 55, '4'),
+  ]
   return (
    
       <div className={`
@@ -13,7 +22,7 @@ export default function Home() {
         text-white
       `}>
         <Layout titulo='Cadastro Simples'>
-          <span>Conteudo</span>
+          <Tabela clientes={clientes}></Tabela>
         </Layout>
       </div>
 
